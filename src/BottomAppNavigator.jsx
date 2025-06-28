@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ProductsNavigation from './Pages/ProductsNavigation';
 import Setting from './Pages/Setting';
+import Add from './Pages/Add';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +28,7 @@ return (
     >
         <Tab.Screen name="ProductsNavigation" component={ProductsNavigation} options={{title: "Products",}}/>
         <Tab.Screen name="Setting" component={Setting} options={{  title: "Setting"}}/>
+        <Tab.Screen name="Add" component={Add} options={{  title: "Add"}}/>
     </Tab.Navigator>
 );
 }
