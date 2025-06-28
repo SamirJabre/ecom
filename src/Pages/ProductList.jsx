@@ -1,8 +1,23 @@
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 const ProductList = ({navigation}) => {
+    
+    useEffect(() => {
+        const fetchData = async () => {
+        try{
+           await axios.get('https://dummyjson.com/products', { timeout: 1000 })
+            .then(res => console.log(res.data.products))
+            
+        }
+        catch(err){
+            console.error("Error or Timeout",err);
+        }
+    }
+    fetchData();
+    },[])
 
 
     const handlePress = (item) => {
